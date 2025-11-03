@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useContext, useRef } from "react";
 import { NavbarContext } from "../../context/NavContext";
+import { Link } from "react-router-dom";
 
 const FullScreenNav = () => {
   const fullNavLinksRef = useRef(null);
@@ -115,14 +116,16 @@ const FullScreenNav = () => {
             <div className="lg:h-44 h-28 lg:w-1 w-0.5 right-0 rotate-45 origin-top absolute bg-[#80A1BA]"></div>
           </div>
         </div>
-        <div className=" py-36 lg:py-0">
-          <div className="link origin-top relative border-t-1 border-white">
-            <h1 className="font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase">
+        <div className=" py-36 lg:py-0"  onClick={() => {
+              setNavOpen(false);
+            }}>
+          <Link to="/services"> <div className="link origin-top relative border-t-1 border-white">
+        <h1 className="font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase cursor-pointer">
               Services
             </h1>
             <div className="moveLink absolute text-black  flex top-0 bg-[#80A1BA]">
               <div className="moveX flex items-center  ">
-                <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[1]  lg:pt-10 pt-4 uppercase">
+          <h2 className="whitespace-nowrap font-[font2] lg:text-[8vw] text-5xl  text-center lg:leading-[1]  lg:pt-10 pt-4 uppercase">
                   SEE everything
                 </h2>
                 <img
@@ -158,8 +161,8 @@ const FullScreenNav = () => {
                 />
               </div>
             </div>
-          </div>
-          <div className="link origin-top relative border-t-1 border-white">
+          </div> </Link>
+       <Link to="/about"> <div className="link origin-top relative border-t-1 border-white">
             <h1 className="font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase">
               About
             </h1>
@@ -202,7 +205,8 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className="link origin-top relative border-t-1 border-white">
+          </Link>  
+          <Link to="/contact"> <div className="link origin-top relative border-t-1 border-white">
             <h1 className="font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase">
               Contact
             </h1>
@@ -245,7 +249,8 @@ const FullScreenNav = () => {
               </div>
             </div>
           </div>
-          <div className="link origin-top relative border-y-1 border-white">
+          </Link> 
+    <Link to ="/Blogs"> <div className="link origin-top relative border-y-1 border-white">
             <h1 className="font-[font2] text-5xl lg:text-[8vw] text-center lg:leading-[0.8] lg:pt-10 pt-3 uppercase">
               Blogs
             </h1>
@@ -287,7 +292,7 @@ const FullScreenNav = () => {
                 />
               </div>
             </div>
-          </div>
+          </div> </Link>
         </div>
       </div>
     </div>

@@ -26,7 +26,7 @@
 }
 
 
-.move{
+.moveX{
     animation-name: moveAnimation;
     animation-duration: 5s;
     animation-iteration-count: infinite;
